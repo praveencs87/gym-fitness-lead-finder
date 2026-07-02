@@ -1,0 +1,24 @@
+{
+    "actorSpecification": 1,
+    "name": "gym-fitness-lead-finder",
+    "title": "Gym and Fitness Lead Qualifier",
+    "description": "Extract and automatically qualify gym leads from YellowPages by flagging businesses that lack a website or have poor customer ratings.",
+    "version": "0.0",
+    "input": "./input_schema.json",
+    "dockerfile": "../Dockerfile",
+    "minMemoryMbytes": 256,
+    "maxMemoryMbytes": 1024,
+    "pricingModel": "PAY_PER_EVENT",
+    "pricingEvents": [
+        {
+            "eventName": "apify-actor-start",
+            "pricePerEvent": 0.00005,
+            "description": "Charged once when Actor starts"
+        },
+        {
+            "eventName": "lead-extracted",
+            "pricePerEvent": 0.002,
+            "description": "Charged per Gym/Fitness lead successfully extracted"
+        }
+    ]
+}
