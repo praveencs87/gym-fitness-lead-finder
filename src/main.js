@@ -1,3 +1,4 @@
+import { armKillSwitch, disarmKillSwitch } from './utils/timeoutManager.js';
 import { Actor } from 'apify';
 import { CheerioCrawler, log } from 'crawlee';
 
@@ -121,7 +122,9 @@ try {
     log.info(`Starting Gym Lead Finder for ${searchUrls.length} start URLs...`);
     
     await crawler.addRequests(searchUrls);
+    armKillSwitch(crawler);
     await crawler.run();
+    disarmKillSwitch();
 
     log.info(`🎉 Finished! Extracted ${totalLeadsExtracted} gym leads.`);
 } catch (error) {

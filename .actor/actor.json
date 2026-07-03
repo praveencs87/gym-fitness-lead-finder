@@ -6,8 +6,8 @@
     "version": "0.0",
     "input": "./input_schema.json",
     "dockerfile": "../Dockerfile",
-    "minMemoryMbytes": 256,
-    "maxMemoryMbytes": 1024,
+    "minMemoryMbytes": 1024,
+    "maxMemoryMbytes": 4096,
     "pricingModel": "PAY_PER_EVENT",
     "pricingEvents": [
         {
@@ -20,5 +20,18 @@
             "pricePerEvent": 0.002,
             "description": "Charged per Gym/Fitness lead successfully extracted"
         }
-    ]
+    ],
+    "isPublic": true,
+    "seoTitle": "Gym and Fitness Lead Qualifier | Apify Actor",
+    "seoDescription": "Extract and automatically qualify gym leads from YellowPages by flagging businesses that lack a website or have poor customer ratings.",
+    "categories": [
+        "BUSINESS",
+        "DATA_EXTRACTION",
+        "LEAD_GENERATION"
+    ],
+    "defaultRunOptions": {
+        "build": "latest",
+        "timeoutSecs": 1800,
+        "memoryMbytes": 4096
+    }
 }
